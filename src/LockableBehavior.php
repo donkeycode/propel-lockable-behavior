@@ -10,6 +10,7 @@ class LockableBehavior extends Behavior
      */
     protected $parameters = array(
         'apply_to'            => array(),
+        'locker_activated'    => 'false',
     );
 
     /**

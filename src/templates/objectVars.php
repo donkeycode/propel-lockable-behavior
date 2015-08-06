@@ -6,7 +6,7 @@ protected $lockCheckActivated = false;
 /**
 * Activate the locker
 */
-protected $lockerActivated = false;
+protected $lockerActivated = <?php echo $locker_activated; ?>;
 
 
 /**

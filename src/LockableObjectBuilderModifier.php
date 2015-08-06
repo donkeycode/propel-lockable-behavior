@@ -18,6 +18,7 @@ class LockableObjectBuilderModifier
     public function objectAttributes($builder)
     {
         return $this->behavior->renderTemplate('objectVars', array(
+            'locker_activated' => $this->behavior->getParameters()['locker_activated'],
         ));
     }
 

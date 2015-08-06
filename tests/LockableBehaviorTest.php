@@ -41,7 +41,6 @@ EOF;
     public function testRevertLockedFields()
     {
         $post = new Post();
-        $post->activateLocker();
         $post->setTitle('A super book');
         $post->save();
         $this->assertTrue($post->getTitleLock());
