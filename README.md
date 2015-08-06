@@ -37,4 +37,3 @@ The **lockable** behavior requires four parameters to work:
 
 * `$post->activateLocker()` set true to locker fields at `preSave`
 * `$post->activateLockCheck()` revert locked fields at `preSave` to only persist not locked fields
-
