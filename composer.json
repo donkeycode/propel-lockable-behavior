@@ -1,0 +1,19 @@
+
+{
+    "name": "donkeycode/propel-lockable-behavior",
+    "description": "Propel behavior that helps you to set a lock per fields",
+    "keywords": [ "propel", "behavior", "lock", "synchronizer" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric LOMBARDOT",
+            "email": "cedric.lombardot@gmail.com"
+        }
+    ],
+    "require": {
+        "propel/propel1": "~1.6"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
