@@ -4,8 +4,13 @@
 public function activateLockCheck()
 {
     $this->lockedCopy = $this->copy(true);
-
     $this->lockCheckActivated = true;
+}
+
+public function deactivateLockCheck()
+{
+    $this->lockedCopy = null;
+    $this->lockCheckActivated = false;
 }
 
 /**
@@ -14,6 +19,11 @@ public function activateLockCheck()
 public function activateLocker()
 {
     $this->lockerActivated = true;
+}
+
+public function deactivateLocker()
+{
+    $this->lockerActivated = false;
 }
 
 /**
