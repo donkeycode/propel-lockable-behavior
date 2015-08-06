@@ -1,6 +1,6 @@
 # LockableBehavior
 
-[![Build Status](https://secure.travis-ci.org/donkeycode/LockableBehavior.png)](http://travis-ci.org/cedriclombardot/LockableBehavior)
+[![Build Status](https://travis-ci.org/donkeycode/propel-lockable-behavior.svg)](https://travis-ci.org/donkeycode/propel-lockable-behavior)
 
 The **LockableBehavior** behavior allows you to mark columns edited and choose forceUpdate or not.
 
