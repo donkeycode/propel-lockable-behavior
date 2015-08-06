@@ -35,7 +35,7 @@ protected function lockModifiedFields()
         return;
     }
 
-    <?php foreach ($apply_to as $field) : ?>if (!$this->isColumnModified("<?php echo $field; ?>")) {
+    <?php foreach ($apply_to as $field) : ?>if ($this->isColumnModified(<?php echo $fields[$field]; ?>)) {
         $this-><?php echo $setters[$field]; ?>Lock(true);
     }
 
@@ -48,7 +48,7 @@ protected function revertLockedFields()
         return;
     }
 
-    <?php foreach ($apply_to as $field) : ?>if (!$this->isColumnModified("<?php echo $field; ?>") && $this-><?php echo $getters[$field]; ?>Lock()) {
+    <?php foreach ($apply_to as $field) : ?>if ($this->isColumnModified(<?php echo $fields[$field]; ?>) && $this-><?php echo $getters[$field]; ?>Lock()) {
         $this-><?php echo $setters[$field]; ?>($this->lockedCopy-><?php echo $getters[$field]; ?>());
     }
 

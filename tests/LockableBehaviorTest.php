@@ -14,9 +14,10 @@ class LockableBehaviorTest extends \PHPUnit_Framework_TestCase
         <column name="id" required="true" primaryKey="true" autoIncrement="true" type="INTEGER" />
 
         <column name="title" type="varchar" size="255" />
+        <column name="description" type="longvarchar" />
 
         <behavior name="lockable">
-            <parameter name="apply_to" value="title" />
+            <parameter name="apply_to" value="title, description" />
             <parameter name="with_description" value="true" />
         </behavior>
     </table>
@@ -45,6 +46,7 @@ EOF;
         $post->setTitle('A super book');
         $post->save();
         $this->assertTrue($post->getTitleLock());
+        $this->assertFalse($post->getDescriptionLock());
 
         $post->activateLockCheck();
         $post->setTitle('New Title');

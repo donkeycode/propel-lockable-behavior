@@ -26,6 +26,7 @@ class LockableObjectBuilderModifier
     {
         return $this->behavior->renderTemplate('addLocker', array(
             'apply_to' => $this->behavior->getApplyToFields(),
+            'fields'   => $this->getFieldsConstants(),
             'setters'  => $this->getApplyToSetters(),
             'getters'  => $this->getApplyToGetters(),
         ));
@@ -72,4 +73,13 @@ class LockableObjectBuilderModifier
         return $getters;
     }
 
+    protected function getFieldsConstants()
+    {
+        $getters = array();
+        foreach ($this->behavior->getApplyToFields() as $field) {
+            $getters[$field] = $this->behavior->getTable()->getColumn($field)->getConstantName();
+        }
+
+        return $getters;
+    }
 }
