@@ -3,7 +3,7 @@
 */
 public function activateLockCheck()
 {
-    $this->lockedCopy = $this->copy(true);
+    $this->lockedCopy = $this->copy();
     $this->lockCheckActivated = true;
 }
 
